@@ -168,9 +168,8 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav ms-auto">
         <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
-        <a class="nav-link" href="{% static 'ETJ.pdf' %}">ETJ</a>
         <a class="nav-link" href="#">Brag Sheet</a>
-        <a class="nav-link" href="#">Blog</a>
+        <a class="nav-link" href="{% url 'bloghome' %}">Blog</a>
       </div>
     </div>
   </div>
@@ -187,7 +186,7 @@
         <p>
           <a href="mailto:brent.d.woodin.mil@health.mil" class="btn btn-primary my-2">Email Contact</a>
         </p>
-        <img src="{% static 'homepic.JPEG' %}"/>
+        <img src="{% static 'ProfilePic.jpg' %}" height="400"/>
       </div>
     </div>
   </section>
@@ -215,7 +214,7 @@
     <p class="float-end mb-1">
       <a href="#">Back to top</a>
     </p>
-    <p class="mb-1">Copyright Brent Woodin 2023</p>
+    <p class="mb-1">HN Woodin, Brent D. {% now "Y" %}</p>
   </div>
 </footer>
 

@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.111.3">
-    <title>HN Woodin, Brent USN</title>
+    <title>{{blog.title}}</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
 
@@ -166,9 +166,9 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ms-auto">
-                <a class="nav-link" aria-current="page" href="{% url 'home' %}">Home</a>
+                <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
                 <a class="nav-link" href="#">Brag Sheet</a>
-                <a class="nav-link active" href="#">Blog</a>
+                <a class="nav-link" href="{% url 'bloghome' %}">Blog</a>
             </div>
           </div>
         </div>
@@ -176,27 +176,16 @@
 </header>
 
 <main>
-    <div class="container">
-     <h1 class="text-center pt-3">Blog</h1>
-     <br/>
-     <br/>
-     <h2>Latest Post</h2>
-     <hr/>
-     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-     {% for blog in blog.all %}   
-     <div class="col">
         <div class="card shadow-sm">
-          <a href="{% url 'detail' blog.id %}"><h3>{{blog.title}}</h3></a>
-          <div class="time">{{blog.formatDate}}</div>
-          <img class="img-fluid" src="{{blog.image.url}}" height="400" width="400"/>
+          <h1 class="text-center pt-3">{{blog.title}}</h1>
+          <h3 class="text-center">{{blog.date}}</h3>
+          <br/>
+          <img class="img-fluid" src="{{blog.image.url}}"/>
+          <br/>
           <div class="card-body">
-            <p class="card-text">{{blog.preview}}</p>
+            <p class="card-text">{{blog.body}}</p>
           </div>
         </div>
-      </div>
-      {% endfor %}
-    </div>
-    </div>
 </main>
 
 <footer class="text-body-secondary py-5">

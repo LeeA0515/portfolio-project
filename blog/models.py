@@ -9,6 +9,6 @@ class Blog(models.Model):
     def __str__(self):
         return self.title
     def preview(self):
-        return self.body[:100 + '...']
+        return self.body[:100]+ ' ...'
     def formatDate(self):
         return self.date.strftime('%d %b %Y' + ', ' + '%a')
