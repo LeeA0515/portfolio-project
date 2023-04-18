@@ -159,6 +159,7 @@
 
     
 <header data-bs-theme="dark">
+  {% load static %}
   <d<nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">USN Portfolio</a>
@@ -168,7 +169,7 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav ms-auto">
         <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
-        <a class="nav-link" href="#">Brag Sheet</a>
+        <a class="nav-link" href="{% static 'woodin-bragsheetf.pdf' %}">Brag Sheet</a>
         <a class="nav-link" href="{% url 'bloghome' %}">Blog</a>
       </div>
     </div>
